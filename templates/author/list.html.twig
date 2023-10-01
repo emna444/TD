@@ -1,0 +1,17 @@
+{% if authors is defined and authors is not empty %}
+     {% set s = 0 %}
+  {% for author in authors %}
+    <p>{{ author.username | upper }}
+     {{ author.email }}
+     {{ author.nb_books}}
+      <img src=" {{author.picture}}" alt="" width="100"/> 
+   <a href="{{ path('app_author_detail', {'id': author.id}) }}">{{author.username}}</a>
+
+    </p>
+{% set s=s+author.nb_books%}
+  {%endfor%}
+le nombre des livre total: {{ s }}</p>
+le nombre des auteurs: {{ authors|length }}
+ {% else %}
+  <p>Le tableau est vide ou non défini.</p>
+{% endif %}
