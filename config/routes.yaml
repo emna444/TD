@@ -5,3 +5,7 @@ controllers:
 app_author_detail:
     path: '/author/{id}'
     controller: 'App\Controller\AuthorController::authordetail'
+
+app_student:
+    resource: 'App\Controller\StudentController'
+    type: annotation
